@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SWA2LY') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,11 +25,14 @@
 </head>
 <body>
     <div id="app">
-            @include("includes.navbar")
-      
-        <main class="py-4">
+        @include("includes.header")
+
+        <main class=" app">
             @yield('content')
         </main>
+
+        @include("includes.footer")
+        
     </div>
 </body>
 </html>

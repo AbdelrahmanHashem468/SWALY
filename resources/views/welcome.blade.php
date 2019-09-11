@@ -63,10 +63,11 @@
         </style>
     </head>
     <body>
-            @include("includes.navbar")
+            @include("includes.header")
         
+            <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top " alt="...">
 
-        
+            @include("includes.footer")
     <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

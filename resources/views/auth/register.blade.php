@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -58,10 +58,10 @@
                                 <div class="col-md-6">
                                     <select  id="role"  name="role" class="form-control" >
                                         <option value="" disabled>Select Customer Status</option>
-                                        <option value="0" >Customers</option>
-                                        <option value="1" >Marketing Directors</option>
-                                        <option value="2" >Marketing Team Leaders</option>
-                                        <option value="3" >Marketing Trainees</option>
+                                        <option value="1" >Customers</option>
+                                        <option value="2" >Marketing Directors</option>
+                                        <option value="3" >Marketing Team Leaders</option>
+                                        <option value="4" >Marketing Trainees</option>
                                     </select>
                                 </div>
                         </div>
