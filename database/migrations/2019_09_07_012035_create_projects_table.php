@@ -17,13 +17,14 @@ class CreateProjectsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('desc');
+            $table->string('image_name');
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('users');
-            $table->unsignedBigInteger('MD_id');
+            $table->unsignedBigInteger('MD_id')->nullable()->default(null);
             $table->foreign('MD_id')->references('id')->on('users');
-            $table->unsignedBigInteger('MTL_id');
+            $table->unsignedBigInteger('MTL_id')->nullable()->default(null);
             $table->foreign('MTL_id')->references('id')->on('users');
-            $table->date('deadline');
+            $table->date('deadline')->nullable()->default(null);
             $table->timestamps();
         });
     }
