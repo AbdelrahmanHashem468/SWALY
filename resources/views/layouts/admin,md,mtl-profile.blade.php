@@ -13,76 +13,37 @@
                     <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top photto" alt="...">
                     <br/>
                     <br/>
-                    <h2>Shika</h2>
-                    <h4>Shika@gmail.com</h4>
-                    <h4>01140073150</h4>
-                    <h4>Marketing Director</h4>
+                    <h2>{{Auth::User()->name}}</h2>
+                    <h4>{{Auth::User()->email}}</h4>
+                    <h4>{{Auth::User()->phonenumber}}</h4>
+                    <h4>
+                      @if( Auth::User()->role == 0) Admin @endif
+                      @if( Auth::User()->role == 2) Marketing Directors @endif
+                      @if( Auth::User()->role == 3) Marketing Team Leaders @endif
+                    </h4>
                 </div>
                 <hr>
 
                 <h2>All Current projects</h2>
 
                 <div class="row">
-                      <div class="card col-md-3" style="width: 18rem;">
-                              <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h3 class="card-title">Card title</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Send Request</a>
-                              </div>
-                            </div>
-
-                            <div class="card col-md-3" style="width: 18rem;">
-                                <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top" alt="...">
+                    @foreach ($projects as $row)
+                        
+                        <div class="card col-md-3" style="width: 18rem;">
+                                <img src="/images/{{ $row->image_name }}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                  <h3 class="card-title">Card title</h3>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h3 class="card-title">{{$row->name}}</h3>
+                                <p class="card-text">{{$row->desc}}</p>
+                                @if(Auth::User()->role ==2)
                                   <a href="#" class="btn btn-primary">Send Request</a>
+                                @endif
                                 </div>
                               </div>
-
-                              <div class="card col-md-3" style="width: 18rem;">
-                                  <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h3 class="card-title">Card title</h3>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Send Request</a>
-                                  </div>
-                                </div>
+                    @endforeach
+  
                 </div>
 
-                <hr>
 
-                <h2>All previous Assigned projects</h2>
-
-                <div class="row">
-                    <div class="card col-md-3" style="width: 18rem;">
-                            <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h3 class="card-title">Card title</h3>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Send Request</a>
-                            </div>
-                          </div>
-
-                          <div class="card col-md-3" style="width: 18rem;">
-                              <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h3 class="card-title">Card title</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Send Request</a>
-                              </div>
-                            </div>
-
-                            <div class="card col-md-3" style="width: 18rem;">
-                                <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h3 class="card-title">Card title</h3>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="btn btn-primary">Send Request</a>
-                                </div>
-                              </div>
-                </div>
         
         </div> 
 

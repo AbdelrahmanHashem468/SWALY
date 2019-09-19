@@ -11,8 +11,7 @@
     margin-right: 15px;
 }
 .card{
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 15px;
     background-color: rgb(23, 25, 48);
 
 }
@@ -28,7 +27,11 @@
     
     */
 }
-textarea , input[type=text]
+
+.wel{
+height: 83.3%;
+}
+textarea , select,input[type=text]
 {
     background-color: #ccc !important;
     letter-spacing: 3px;

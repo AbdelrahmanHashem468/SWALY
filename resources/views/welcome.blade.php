@@ -65,7 +65,7 @@
     <body>
             @include("includes.header")
         
-            <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top " alt="...">
+            <img src={{ URL::asset('public/fdfdsfdsf.jpg')}} class="card-img-top wel" alt="...">
 
             @include("includes.footer")
     <script src="{{ asset('js/app.js') }}"></script>

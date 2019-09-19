@@ -21,4 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'HomeController@profile');
 
+Route::get('/allcurrentproject', 'HomeController@allcurrentproject');
+
+Route::get('/allassignedproject', 'HomeController@allassignedproject');
+
+Route::get('/edit', 'HomeController@edit');
+
+Route::post('/update', 'HomeController@update');
+
 Route::post('/project/add', 'ProjectsController@add');
