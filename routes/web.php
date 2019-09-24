@@ -30,3 +30,5 @@ Route::get('/edit', 'HomeController@edit');
 Route::post('/update', 'HomeController@update');
 
 Route::post('/project/add', 'ProjectsController@add');
+
+Route::get('/test','ProjectsController@getId');

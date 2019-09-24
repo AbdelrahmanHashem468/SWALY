@@ -45,4 +45,12 @@ class ProjectsController extends Controller
         }
         return $name;
     }
+
+    public static function getId()
+    {
+        $users = User::getAllCustomers();
+        if(sizeof($users)>0)
+            return $users[rand(0,sizeof($users)-1)]['id'];
+    }
+
 }

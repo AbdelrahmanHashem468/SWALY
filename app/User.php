@@ -37,6 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function getAllCustomers()
+    {
+        return User::where('role','=','1')->get();
+    }
+
     public function project()
     {
         return $this->hasMany('App\Project');
