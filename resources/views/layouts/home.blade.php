@@ -46,10 +46,15 @@
                               <h3 class="card-title">{{$row->name}}</h3>
                               <p class="card-text">{{$row->desc}}</p>
                               @if(Auth::User()->role ==2)
-                                <a href="#" class="btn btn-primary">Send Request</a>
+                                <form action="/request" method="post">
+                                  @csrf
+                                <input type="hidden" value="{{$row->id}}" name="id" class="form-control-file" >
+                                <button type="submit" class="btn btn-primary">Send Request</button>
+                                </form>
                               @endif
                               </div>
                             </div>
+                        
                   @endforeach
 
                 </div>

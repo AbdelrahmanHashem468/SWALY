@@ -18,10 +18,13 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function test()
+    {
+        dd(Project::getAllProjectNotRequested());
+    }
     public function index()
     {
-        $projects = Project::all()->where('MD_id',null);
+        $projects = Project::getAllProjectNotRequested();
         $assigned_projects = Project::all()->where('MD_id',!null);
         return view('layouts.home',compact('projects','assigned_projects'));
     }

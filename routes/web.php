@@ -31,4 +31,6 @@ Route::post('/update', 'HomeController@update');
 
 Route::post('/project/add', 'ProjectsController@add');
 
-Route::get('/test','ProjectsController@getId');
+Route::post('/request','RequestsController@send');
+
+Route::get('/test','HomeController@test');
