@@ -18,10 +18,14 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
+
+
     public function test()
     {
-        dd(Project::getAllProjectNotRequested());
+        return view('allrequest');
     }
+
+
     public function index()
     {
         $projects = Project::getAllProjectNotRequested();
@@ -57,7 +61,7 @@ class HomeController extends Controller
         {
             $id=Auth::User()->id;
             $projects = Project::all()->where('customer_id',$id);
-            return view('layouts.customer,mts-profile',compact('projects'));
+            return view('layouts.customer_profile',compact('projects'));
         }
 
         elseif(Auth::User()->role ==4 )
@@ -92,7 +96,8 @@ class HomeController extends Controller
         $user->name = request('name');
         $user->email = request('email');
         $user->phonenumber = request('phonenumber');
-        $user->image_name=$this->uplaodFile($request);
+        if(request('input_img') !='')
+            $user->image_name=$this->uplaodFile($request);
         if(request('password') !='')
             $user->password = Hash::make(request('password'));
         $user->save();

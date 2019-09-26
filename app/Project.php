@@ -15,7 +15,8 @@ class Project extends Model
             ->LeftJoin('project__requests',function ($leftJoin) {
             $leftJoin->on('projects.id', '=', 'project__requests.project_id')
             ->where('project__requests.MD_id','=',Auth::User()->id);
-            })->where('project__requests.MD_id','=',null)
+            })
+            ->where('project__requests.MD_id','=',null)
             ->get();
     }
 

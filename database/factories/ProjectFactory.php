@@ -8,7 +8,7 @@ use App\Http\Controllers\ProjectsController;
 
 $factory->define(\App\Project::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'project_name' => $faker->name,
         'desc' => $faker->text(50),
         'image_name' => '1568855528.jpeg',
         'customer_id' => ProjectsController::getId(),

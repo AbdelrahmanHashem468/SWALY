@@ -17,9 +17,9 @@
                     <h4>{{Auth::User()->email}}</h4>
                     <h4>{{Auth::User()->phonenumber}}</h4>
                     <h4>
-                      @if( Auth::User()->role == 0) Admin @endif
-                      @if( Auth::User()->role == 2) Marketing Directors @endif
-                      @if( Auth::User()->role == 3) Marketing Team Leaders @endif
+                        @if( Auth::User()->role == 0) Admin @endif
+                        @if( Auth::User()->role == 2) Marketing Directors @endif
+                        @if( Auth::User()->role == 3) Marketing Team Leaders @endif
                     </h4>
                 </div>
                 <hr>
@@ -32,15 +32,18 @@
                         <div class="card col-md-3" style="width: 18rem;">
                                 <img src="/images/{{ $row->image_name }}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h3 class="card-title">{{$row->name}}</h3>
+                                <h3 class="card-title">{{$row->project_name}}</h3>
                                 <p class="card-text">{{$row->desc}}</p>
                                 @if(Auth::User()->role ==2)
-                                  <a href="#" class="btn btn-primary">Send Request</a>
+                                <form action="/request" method="post">
+                                @csrf
+                                    <input type="hidden" value="{{$row->id}}" name="id" class="form-control-file" >
+                                    <button type="submit" class="btn btn-primary">Send Request</button>
+                                    </form>
                                 @endif
                                 </div>
-                              </div>
+                        </div>
                     @endforeach
-  
                 </div>
 
 

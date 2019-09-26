@@ -8,7 +8,7 @@
                         <br/>
                         <br/>
                         <h2>{{Auth::User()->name}}</h2>
-                        <h4>{{Auth::User()->email}}</h4>
+                        <h4>{{str_limit(Auth::User()->email, 23, '....')}}</h4>
                         <h4>{{Auth::User()->phonenumber}}</h4>
                         <h4>
                         @if( Auth::User()->role == 0) Admin @endif

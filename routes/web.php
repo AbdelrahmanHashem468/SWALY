@@ -33,4 +33,6 @@ Route::post('/project/add', 'ProjectsController@add');
 
 Route::post('/request','RequestsController@send');
 
-Route::get('/test','HomeController@test');
+Route::get('/request','RequestsController@getAllRequest');
+
+Route::post('/acceptrequest','RequestsController@acceptrequest');

@@ -71,7 +71,22 @@ h1, h2, h3, h4, h5, h6 , p , a ,label
     color: #ccc;
     text-shadow: 0px 0px 10px rgb(23, 25, 48);  
 }
+.table
+{
+    margin: 50px;
+}
 
 .footer{
     background-color:  #0f1e36;
+}
+
+.margin_auto{
+    margin :15px 0px!important;
+    color:#000;
+    text-align:center;
+    background-color: #0f1e36;
+}
+
+.card_min{
+    min-height:400px!important;
 }
