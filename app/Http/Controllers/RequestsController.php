@@ -6,6 +6,7 @@ use App\Project_Request;
 use App\project;
 use App\User;
 use Auth;
+use App\Notification;
 
 class RequestsController extends Controller
 {
@@ -34,8 +35,23 @@ class RequestsController extends Controller
     {
         $fetchedData=$request->all();
         //dd($fetchedData);
+
+        $project=Project::find($fetchedData['project_id']);
+        
+        //dd($project);
         Project::where('id',$fetchedData['project_id'])
-        ->update(['MD_id' => $fetchedData['MD_id']]);
+        ->update([
+        'MD_id' => $fetchedData['MD_id']]);
+
+        Notification::create([
+            'from_id'=>Auth::User()->id,
+            'to_id'=> $fetchedData['MD_id'],
+            'read'=> 0,
+            'type'=>1,
+            'attachment'=> $fetchedData['project_id'],
+            'massage' =>'Your Request of '. $project->project_name .' has been Approved',
+        ]);
+
         Project_Request::where('project_id',$fetchedData['project_id'])->delete();
         return back();
     }

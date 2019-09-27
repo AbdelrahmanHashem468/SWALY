@@ -17,6 +17,7 @@ class Project extends Model
             ->where('project__requests.MD_id','=',Auth::User()->id);
             })
             ->where('project__requests.MD_id','=',null)
+            ->where('projects.MD_id','=',null)
             ->get();
     }
 

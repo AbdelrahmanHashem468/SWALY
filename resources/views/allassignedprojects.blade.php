@@ -11,16 +11,10 @@
                                 <div class="card-body">
                                 <h3 class="card-title">{{$row->project_name}}</h3>
                                 <p class="card-text">{{$row->desc}}</p>
-                                @if(Auth::User()->role ==2)
-                                  <a href="#" class="btn btn-primary">Send Request</a>
-                                @endif
                                 </div>
                               </div>
                     @endforeach
-  
                   </div>
-
-        
     </div>
     
 @endsection
