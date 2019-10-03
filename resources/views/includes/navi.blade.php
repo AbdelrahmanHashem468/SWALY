@@ -1,6 +1,6 @@
 <div style="text-align:center;">
 
-        <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top photo" alt="...">
+        <img src="/images/{{ Auth::User()->image_name }}" class="card-img-top photo" alt="...">
         <a href="/profile" class="btn btn-info btn-lg btttn" role="button">My Profile</a>
         <br/>
         <a href="/edit" class="btn btn-dark btn-lg btttn" role="button">Edit Profile</a>

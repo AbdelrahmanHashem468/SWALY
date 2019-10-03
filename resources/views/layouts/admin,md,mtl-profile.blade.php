@@ -10,7 +10,7 @@
         
         <div class="col-md-9">
                 <div style="text-align:center;">
-                    <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top photto" alt="...">
+                    <img ssrc="/images/{{ Auth::User()->image_name }}" class="card-img-top photto" alt="...">
                     <br/>
                     <br/>
                     <h2>{{Auth::User()->name}}</h2>

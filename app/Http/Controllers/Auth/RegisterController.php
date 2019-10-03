@@ -72,7 +72,22 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phonenumber' => $data['phonenumber'],
             'role' => $data['role'],
+            'image_name'=>$this->uplaodFile($data),
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+
+    private function uplaodFile(array $data)
+    {
+        $name='';
+        if ($data['input_img'])
+        {
+            $image = $data['input_img'];
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('images');
+            $image->move($destinationPath, $name);
+        }
+        return $name;
     }
 }

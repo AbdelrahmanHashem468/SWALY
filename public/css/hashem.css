@@ -31,7 +31,7 @@
 .wel{
 height: 83.3%;
 }
-textarea , select,input[type=text]
+textarea , select,input[type=text],input[type=date]
 {
     background-color: #ccc !important;
     letter-spacing: 3px;

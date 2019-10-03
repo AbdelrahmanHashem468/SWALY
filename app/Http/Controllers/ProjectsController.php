@@ -16,7 +16,7 @@ class ProjectsController extends Controller
 
         $iscreated= Project::create([
             'customer_id'=> Auth::User()->id,
-            'name'=>$fetchedData['name'],
+            'project_name'=>$fetchedData['name'],
             'desc'=>$fetchedData['desc'],
             'image_name'=>$this->uplaodFile($request),
         ])->wasRecentlyCreated;

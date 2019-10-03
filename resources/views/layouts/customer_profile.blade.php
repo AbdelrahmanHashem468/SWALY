@@ -12,7 +12,7 @@
  
         <div class="col-4">
                 <div style="text-align:center;">
-                        <img src={{ URL::asset('public/asd.jpg')}} class="card-img-top photto" alt="...">
+                        <img src="/images/{{ Auth::User()->image_name }}" class="card-img-top photto" alt="...">
                         <br/>
                         <br/>
                         <h2>{{Auth::User()->name}}</h2>
