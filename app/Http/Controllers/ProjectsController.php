@@ -33,6 +33,8 @@ class ProjectsController extends Controller
             'input_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
     }
+
+
     private function uplaodFile(Request $request)
     {
         $name='';
@@ -51,6 +53,13 @@ class ProjectsController extends Controller
         $users = User::getAllCustomers();
         if(sizeof($users)>0)
             return $users[rand(0,sizeof($users)-1)]['id'];
+    }
+
+    public function getAllProjectModule()
+    {
+        $project = Project::getProjectModule();
+
+        return view('projectmodule',compact('project'));
     }
 
 }

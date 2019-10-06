@@ -42,18 +42,31 @@ class User extends Authenticatable
         return User::where('role','=','1')->get();
     }
 
-    public function project()
+    public function projectCustomer()
     {
-        return $this->hasMany('App\Project');
+        return $this->hasMany('App\Project','customer_id');
     }
+    
+    public function projectMD()
+    {
+        return $this->hasMany('App\Project','MD_id');
+    }
+    
+    public function projectMTL()
+    {
+        return $this->hasMany('App\Project','MTL_id');
+    }
+
+    public function project_Trainees()
+    {
+        return $this->belongsTo('App\Project_Trainees');
+    }
+
     public function project_Request()
     {
         return $this->hasMany('App\Project_Request');
     }
 
 
-    public function project_Trainees()
-    {
-        return $this->belongsTo('App\Project_Trainees');
-    }
+    
 }

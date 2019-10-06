@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project_Trainees extends Model
 {
     //
+    protected $guarded = [];
 
     public function project()
     {
@@ -14,6 +15,6 @@ class Project_Trainees extends Model
     }
     public function user()
     {
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\User','MTS_id');
     }
 }

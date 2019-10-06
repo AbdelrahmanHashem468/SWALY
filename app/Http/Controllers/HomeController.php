@@ -35,24 +35,7 @@ class HomeController extends Controller
     }
     
 
-    public function allcurrentproject()
-    {
-        $projects = Project::all()->where('MD_id',null);
-
-        return view('allcurrentprojects',compact('projects'));
-    }
-
-    public function allassignedproject()
-    {
-        $unread_projects = Notification::where('read',0)
-        ->where('notifications.to_id','=',Auth::User()->id)
-        ->get();
-        $read_projects=Notification::getAllReadProjects();
-        $teamleader = User::where('role',3)->get();
-        $trainee = User::where('role',4)->get();
-        return view('allassignedprojects',
-        compact('unread_projects','read_projects','teamleader','trainee'));
-    }
+    
 
     public function profile()
     {

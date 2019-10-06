@@ -3,17 +3,17 @@
 
 <div class="container py-4">
 
-        @foreach ($unread_projects as $row)
+        @foreach ($unread_projects as $projects)
             <div class="row">
-                <form class="col-md-8" action="">
-                    <h3 style="color:darksalmon">{{$row->massage}}</h3>
+                <form class="col-md-8" method="POST" action="/setmodule">
+                    <h3 style="color:darksalmon">{{$projects->massage}}</h3>
                     <hr>
                     <h4  style="color:snow">--------------Set Module----------------</h4>
                     <hr>
                     @csrf
                     <div class="form-group">
                         <h4 for="exampleFormControlSelect1">Select TeamLeader</h4>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" name="MTL_id" id="exampleFormControlSelect1">
                             @foreach($teamleader as $index)
                                 <option value="{{$index['id']}}">{{$index['name']}}</option>
                             @endforeach
@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                         <h4 for="exampleFormControlSelect1">Select Trainee</h4>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" name="MTS_id" id="exampleFormControlSelect1">
                             @foreach($trainee as $row)
                                 <option value="{{$row['id']}}" >{{$row['name']}}</option>
                             @endforeach
@@ -31,7 +31,11 @@
 
                     <div class="form-group">
                         <h4 for="exampleFormControlSelect1">Select Deadline</h4>
-                        <input type='date' class="form-control" />
+                        <input type='date' name="Deadline" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type='hidden' name="project_id" value="{{$projects->attachment}}" class="form-control" />
                     </div>
 
                     <div class="form-group">

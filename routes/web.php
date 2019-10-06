@@ -21,9 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'HomeController@profile');
 
-Route::get('/allcurrentproject', 'HomeController@allcurrentproject');
+Route::get('/allcurrentproject', 'RequestsController@allcurrentproject');
 
-Route::get('/allassignedproject', 'HomeController@allassignedproject');
+Route::get('/allassignedproject', 'RequestsController@allassignedproject');
 
 Route::get('/edit', 'HomeController@edit');
 
@@ -36,3 +36,7 @@ Route::post('/request','RequestsController@send');
 Route::get('/request','RequestsController@getAllRequest');
 
 Route::post('/acceptrequest','RequestsController@acceptrequest');
+
+Route::post('/setmodule','RequestsController@setmodule');
+
+Route::get('/projectmodule','ProjectsController@getAllProjectModule');

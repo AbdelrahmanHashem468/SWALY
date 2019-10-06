@@ -26,6 +26,11 @@ class Project_Request extends Model
 
     public function User()
     {
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\User','MD_id');
+    }
+
+    public function project()
+    {
+        return $this->hasOne('App\Project');
     }
 }

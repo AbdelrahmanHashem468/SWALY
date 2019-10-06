@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="back">
+        <a href="/projectmodule" class="btn btn-dark btn-lg active adm" role="button">Project Module</a>
         <a href="/request" class="btn btn-light btn-lg btttn adm" role="button">All Rquest</a>
         <a href="/edit" class="btn btn-dark btn-lg active adm" role="button" aria-pressed="true">Edite Profile</a>
         <a href="allcurrentproject" class="btn btn-primary btn-lg active adm" role="button" aria-pressed="true">All Current projects</a>

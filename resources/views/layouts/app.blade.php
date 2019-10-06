@@ -24,7 +24,7 @@
     <link href="{{ asset('css/hashem.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="haashem">
         @include("includes.header")
 
         <main class=" app">
